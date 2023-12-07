@@ -1,6 +1,9 @@
-uvicorn
-fastapi
-jinja2
+uvicorn 
+fastapi 
+jinja2 
 python-multipart
 pillow
-bcrypt 
+bcrypt
+sendgrid 
+python-dotenv
+htmlmin  
