@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block titulo %}Principal{% endblock %}
+
+{% block principal %}
+
+<h1 class="display-6">Área Restrita</h1>
+<hr>
+<div class="row">
+    <div class="col-6">
+        <h2>Alterar Dados</h2>
+        <form method="post" action="/usuario/alterar/{{usuario.id}}">
+            <div class="form-floating mb-3">
+                <input type="text" name="nome" id="nome" value="{{usuario.nome}}" class="form-control" placeholder=" " required>
+                <label for="nome">Nome</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" name="email" id="email" value="{{usuario.email}}" class="form-control" placeholder=" " value="admin@email.com" required>
+                <label for="email">E-mail</label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Salvar Dados</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-6">
+        <h2>Alterar Senha</h2>
+        <form method="post" action="/usuario/alterarsenha">
+            <div class="form-floating mb-3">
+                <input type="password" name="senhaAtual" id="senhaAtual" class="form-control" placeholder=" " required>
+                <label for="senhaAtual">Senha Atual</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" name="novasenha" id="novasenha" class="form-control" placeholder=" " required>
+                <label for="novasenha">Nova Senha</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" name="confnovasenha" id="confnovasenha" class="form-control" placeholder=" " required>
+                <label for="confnovasenha">Confirme a Nova Senha</label>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Salvar Nova Senha</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

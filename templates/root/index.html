@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block titulo %}Principal{% endblock %}
+
+{% block principal %}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 rowcols-xxl-6 g-4 mb-0">
+    {% for produto in produtos %} 
+    <div class="col">
+        <div class="card h-100">
+            <img src="/static/img/produtos/{{ '{:04d}'.format(produto.id) }}.jpg" class="card-img-top" alt="{{produto.nome}}">
+            <div class="card-body">
+                <h5 class="card-title">{{produto.nome}}</h5>
+                <div class="texto-3-linhas">
+                    <p class="card-text">{{produto.descricao}}</p>
+                </div>
+                <p class="card-text"><small class="text-muted">R${{'{:,.2f}'.format(produto.preco)}}</small></p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="/produto/descricao/{{produto.id}}" class="btn btn-secondary btn-sm me2">Detalhes</a>
+                <button class="btn btn-primary btn-sm">Comprar</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %} 
